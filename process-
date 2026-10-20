@@ -22,5 +22,8 @@ This is server project
     2. change the port -> const port = process.env.PORT || 8000
     3. ESM all code in -> index.js
 
-8. create on root folder file -> .gitignore
-    1. type the gitignore folder -> node_modules
+8. npm run dev 
+
+//Middleware
+9. declear in index.js -> import cors from 'cors'; 
+    1. declear in  index.js -> app.use(cors()); app.use(express.json())
