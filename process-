@@ -1,0 +1,26 @@
+This is server project
+
+1. file opening process
+    1. create an folder on pc
+    2. open cmd and type -> npm init -y
+    3. open the folder on vs code
+
+2. package.json some configure change
+    1. "type": "commonjs" -> "type": "module"
+
+3. create a root folder -> index.js 
+
+4. install a express in terminal -> npm i express
+
+5. install a cors in terminal -> npm i cors
+
+6. install a nodemon -> npm i nodemon
+
+7. go to -> https://expressjs.com/en/5x/starter/hello-world/
+    (notes: code in index.js )
+    1. select the -> ESM (if type or copy paste)
+    2. change the port -> const port = process.env.PORT || 8000
+    3. ESM all code in -> index.js
+
+8. create on root folder file -> .gitignore
+    1. type the gitignore folder -> node_modules
