@@ -1,0 +1,63 @@
+This is server project
+
+1. file opening process
+    1. create an folder on pc
+    2. open cmd and type -> npm init -y
+    3. open the folder on vs code
+
+2. package.json some configure change
+    1. "type": "commonjs" -> "type": "module"
+
+3. create a root folder -> index.js 
+
+4. install a express in terminal -> npm i express
+
+5. install a cors in terminal -> npm i cors
+
+6. install a nodemon -> npm i nodemon
+
+7. go to -> https://expressjs.com/en/5x/starter/hello-world/
+    (notes: code in index.js )
+    1. select the -> ESM (if type or copy paste)
+    2. change the port -> const port = process.env.PORT || 8000
+    3. ESM all code in -> index.js
+
+8. npm run dev 
+
+//Middleware
+9. declear in index.js -> import cors from 'cors'; 
+    1. declear in  index.js -> app.use(cors()); app.use(express.json())
+
+10. monngodb install setup and import
+11. monngodb id and pass create 
+12. dotenv install in terminal
+13. declear -> import 'dotenv/config' 
+14. user id and pass save the -> .env file 
+15. go to monngodb-> cluster-> libr-> intallation insturctions -> and copy  and paste 
+
+    import { MongoClient } from 'mongodb';
+
+    const client = new MongoClient(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ac-voyktl0-shard-00-00.0uik2wp.mongodb.net:27017,ac-voyktl0-shard-00-01.0uik2wp.mongodb.net:27017,ac-voyktl0-shard-00-02.0uik2wp.mongodb.net:27017/?ssl=true&replicaSet=atlas-s6pimm-shard-0&authSource=admin`);
+
+16. client to mongodb connect config 
+
+        export async function ConnectToMongoDB(){
+            try{
+                await client.connect()
+                console.log("successfully connected to mongodb");
+                return client;
+            }
+            catch(err){
+                console.dir(err);
+            }
+        };
+        await ConnectToMongoDB();
+
+17. if close the mongodb connection so type the code -> 
+
+    export async function disconnectFromMongoDB() {
+        await client.close();
+    }
+
+18. 
+
