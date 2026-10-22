@@ -59,5 +59,25 @@ This is server project
         await client.close();
     }
 
-18. 
+18. create a folder in mongodb clusters -> browser collection -> add database name and user
+    
+    1. go to chatgpt and ceate dummy json data for example name and email
+    2. dummy data paste in data folder -> add data -> insert document -> paste from chatgpt 
 
+19. go to mongodb docs -> https://www.mongodb.com/docs/drivers/node/current/crud/query/retrieve/
+
+    1. find and connect database to server
+        const connectedDatabase= await ConnectToMongoDB();
+        const database = connectedDatabase.db("simpleCardDB");
+        const users = database.collection("users");
+
+20. go to mongodb docs -> https://www.mongodb.com/docs/drivers/node/current/crud/query/cursor/
+
+    1. get data from database w
+        app.get ('/users', async (req,res)=>{
+            const cursor = users.find({});
+            const allUsers = await cursor.toArray();
+            res.send (allUsers);
+        })
+
+// now create a client side file another folder

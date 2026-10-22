@@ -24,9 +24,16 @@ export async function ConnectToMongoDB(){
         console.dir(err);
     }
 };
-await ConnectToMongoDB();
+const connectedDatabase= await ConnectToMongoDB();
+const database = connectedDatabase.db("simpleCardDB");
+const users = database.collection("users");
 
 
+app.get ('/users', async (req,res)=>{
+    const cursor = users.find({});
+    const allUsers = await cursor.toArray();
+    res.send (allUsers);
+})
 
 app.get ('/', (req,res)=>{
     res.send("hi database");
