@@ -35,9 +35,22 @@ app.get ('/users', async (req,res)=>{
     res.send (allUsers);
 })
 
+
+app.post('/users', async (req,res)=>{
+    const newUser = req.body;
+    console.log("adding new user: ", newUser);
+
+    const result = await users.insertOne(newUser);
+    res.send(result)
+    
+})
+
+
 app.get ('/', (req,res)=>{
     res.send("hi database");
 });
+
+
 
 app.listen(port, ()=>{
     console.log(`Example app listing on port ${port}`);

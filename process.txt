@@ -81,3 +81,13 @@ This is server project
         })
 
 // now create a client side file another folder
+
+21. post method declear
+    1. app.post('/users', (req,res)=>{
+            const newUser = req.body;
+            console.log("adding new user: ", newUser);
+        })
+
+22. connect to mongodb data post    
+    1.  const result = await users.insertOne(newUser);
+         res.send(result)
